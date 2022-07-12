@@ -12,7 +12,7 @@ pipeline{
           sh 'docker login -u AWS -p $(aws ecr-public get-login-password --region ap-south-1) public.ecr.aws/p9w3f8z7'
           sh 'docker build -t jenkins-image .'
           sh 'docker tag jenkins-image:latest public.ecr.aws/p9w3f8z7/jenkins-image: ""$BUILD_ID""'
-          sh 'docker push public.ecr.aws/p9w3f8z7/jenkins-image:""$BUILD_ID""latest'
+          sh 'docker push public.ecr.aws/p9w3f8z7/jenkins-image:""$BUILD_ID""'
         }
       }
     }
