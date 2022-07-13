@@ -1,4 +1,3 @@
-FROM ubuntu
-
-RUN apt-get update
-CMD [“echo”,”Image created”]
+FROM php:7.2-apache
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
